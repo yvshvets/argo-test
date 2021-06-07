@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redis-t
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: redis-t
+  template:
+    metadata:
+      labels:
+        app: redis-t
+    spec:
+      containers:
+      - image: redis
+        name: redis-t
+        ports:
+        - containerPort: 6379
