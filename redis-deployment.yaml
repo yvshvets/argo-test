@@ -14,7 +14,7 @@ spec:
         app: redis-t
     spec:
       containers:
-      - image: redis
+      - image: redis:6.0
         name: redis-t
         ports:
         - containerPort: 6379
